@@ -1,0 +1,32 @@
+.about {
+  background: url(../img/about.jpg) no-repeat center right;
+  background-size: cover;
+
+  height: 60vh;
+  min-height: 40vh;
+
+  padding: 0;
+
+  &Content {
+    height: 100vh;
+    background: $mainWhite;
+
+    padding: 6em 0;
+
+    &Heading {
+      transform: translateX(10%);
+      display: inline-block;
+      border-right: 10px solid $mainYellow;
+    }
+
+    h1 {
+      @include heading-color($bg: $mainYellow)
+    }
+  }
+}
+
+.aboutText {
+  height: auto;
+  min-height: auto;
+  padding: 4em 0;
+}

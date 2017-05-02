@@ -1,0 +1,14 @@
+.landing {
+  background: url(../img/landing.jpg) no-repeat top right;
+  background-size: cover;
+
+
+  .welcome {
+    height: auto;
+    //background-color: $mainWhite;
+
+    h1 {
+      @include heading-color($bg: $mainBlue)
+    }
+  }
+}

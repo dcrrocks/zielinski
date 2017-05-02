@@ -1,0 +1,147 @@
+nav {
+  font-size: 1em;
+
+  width: 50%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  //transform: translate(0, -50%);
+
+  transition: $slowTransition;
+
+  z-index: 9;
+
+  ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    //position: relative;
+
+    li {
+      padding: 1em 0;
+      position: relative;
+      transition: $slowTransition;
+
+      &:before {
+        //content: '';
+        width: .2em;
+        height: .2em;
+        display: block;
+        position: absolute;
+        right: -50%;
+        top: 50%;
+        transform: translate(0, -50%);
+        background: $mainWhite;
+        border: .1em solid $mainBlack;
+
+        opacity: 0;
+
+        transition: $slowTransition;
+      }
+
+      &.active {
+        a {
+        color: $mainBlue
+        }
+
+        &:before {
+          background: $mainBlack;
+        }
+      }
+
+      /*
+      &:nth-child(1) {
+        &:before {
+          transition-delay: 0s;
+        }
+
+        a {
+          transition-delay: 50ms;
+        }
+      }
+
+      &:nth-child(2) {
+        &:before {
+          transition-delay: 50ms;
+        }
+
+        a {
+          transition-delay: 100ms;
+        }
+      }
+
+      &:nth-child(3) {
+        &:before {
+          transition-delay: 100ms;
+        }
+
+        a {
+          transition-delay: 150ms;
+        }
+      }
+
+      &:nth-child(4) {
+        &:before {
+          transition-delay: 150ms;
+        }
+
+        a {
+          transition-delay: 200ms;
+        }
+      }
+
+      &:nth-child(5) {
+        &:before {
+          transition-delay: 200ms;
+        }
+
+        a {
+          transition-delay: 250ms;
+        }
+      } */
+
+      a {
+        font-size: 1.4em;
+        line-height: 2;
+        font-weight: 100;
+        text-transform: uppercase;
+        display: inline;
+        color: $mainBlack;
+
+        margin-right: 2em;
+
+        transition: $slowTransition;
+
+        &:before, &:after {
+          content: none;
+        }
+
+        &:hover {
+          transition: $mainTransition;
+          color: $mainBlue;
+        }
+      }
+    }
+  }
+
+  &.close {
+    width: 100%;
+    //transform: translate(0, -50%);
+
+    li {
+
+    }
+
+    a {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+}

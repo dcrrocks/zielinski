@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
+
+html, .root {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+body, .article {
+  font: 300 1em/1.5 $mainFont;
+  color: $mainBlack;
+  font-family: $mainFont;
+  -webkit-font-smoothing: antialiased;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.align-center {
+    text-align: center;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4, {
+  font-family: $secondFont;
+  letter-spacing: .02em;
+}
+
+h1, .h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.6;
+  padding: .2em 0;
+  //margin: 0 -.001em;
+  display: inline;
+  //background-color: $mainBlue;
+  //color: $mainWhite;
+
+  //box-shadow: .5em 0 0 $mainBlue, -.5em 0 0 $mainBlue;
+
+  @include heading-color;
+
+  &:before {
+    //content: '';
+    display: block;
+    height: .5em;
+  }
+}
+
+h2, .h2 {
+  font-size: 2.5rem;
+  font-weight: 100;
+  line-height: 1.6;
+  padding: .2em 0;
+  margin: 0 -.001em;
+  display: inline;
+
+  @include heading-color;
+
+  &:before {
+    content: '';
+    display: block;
+    height: 1em;
+  }
+}
+
+h3, .h3 {
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0rem;
+  color: $mainBlue;
+}
+
+h4, .h4 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0rem;
+  color: $mainBlue;
+}
+
+a {
+  color: $mainBlue;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+
+  text-shadow:
+    1px 1px white,
+    1px -1px white,
+    -1px 1px white,
+    -1px -1px white;
+
+  &:before, &:after {
+    content: '';
+    width: 0;
+    height: 1px;
+    background: $mainYellow;
+    position: absolute;
+    bottom: .15em;
+    right: -.1em;
+    z-index: -1;
+
+    transition: $mainTransition;
+  }
+
+  &:after {
+    left: -.1em;
+  }
+
+  &:hover {
+    &:after, &:before {
+      width: calc(52% + .1em);
+    }
+  }
+}
+
+.well {
+  font-weight: 300;
+  padding: 4em;
+  color: $mainBlue;
+  border: 1px solid $mainGray;
+
+  a {
+    color: $mainYellow;
+
+    &:before, &:after {
+      background: $mainYellow;
+    }
+  }
+}
+
+p, ul, ol, pre, table, blockquote {
+  margin-top: 0rem;
+  margin-bottom: 1.5rem;
+}
+
+ul ul, ol ol, ul ol, ol ul {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+/* Let's make sure all's aligned */
+hr, .hr {
+  border: 1px solid;
+  margin: -1px 0;
+}
+
+b, strong {
+  font-weight: 700;
+}
+
+i {
+  font-weight: 300;
+}
+
+a, b, i, strong, em, small, code {
+  //line-height: 0;
+}
+
+sub, sup {
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}

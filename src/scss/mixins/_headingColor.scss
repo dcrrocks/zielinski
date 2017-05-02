@@ -1,0 +1,6 @@
+@mixin heading-color ($text: $mainWhite, $bg: $mainBlue) {
+  background-color: $bg;
+  color: $text;
+
+  box-shadow: .5em 0 0 $bg, -.5em 0 0 $bg, inset -2em 0 0 $bg, inset -2em 0 0 $bg, inset 2em 0 0 $bg, inset 2em 0 0 $bg;
+}

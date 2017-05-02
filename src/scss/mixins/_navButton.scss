@@ -1,0 +1,135 @@
+// NAV BUTTON
+
+@mixin nav-button ($nav-buttonColor: $mainBlue) {
+  width: $buttonSize;
+  height: $buttonSize;
+  padding: $line;
+  box-sizing: border-box;
+
+  position: absolute;
+  //margin: 0 4em;
+  top: 50%;
+  right: $line;
+  transform: translateY(-50%);
+
+  background: transparent;
+  box-shadow: 0 0 0 $line $nav-buttonColor;
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+
+  &:before {
+    content: '';
+    width: 100%;
+    height: $line;
+    left: 0;
+    bottom: -$line;
+    position: absolute;
+    pointer-events: none;
+    background: $nav-buttonColor;
+    //box-shadow: inset 0 0 0 $line $nav-buttonColor;
+
+    transition: $mainTransition;
+    //transition: all .2s cubic-bezier(0.5, -0.5, 0.75, 1);
+  }
+
+  &:hover {
+    &:before {
+      bottom: -$line*3;
+    }
+  }
+
+  .menuIcon {
+    top: 0;
+    right: 0;
+
+    width: $buttonSize;
+    height: $buttonSize;
+    border: $line solid transparent;
+    box-sizing: border-box;
+    position:absolute;
+
+    &:after, &:before {
+      content: '';
+      width: $line;
+      height: 50%;
+      position: absolute;
+      top: 47%;
+
+      background: linear-gradient(to top, rgba($nav-buttonColor, 0) 38%, $nav-buttonColor 0%, $nav-buttonColor 0%);
+
+      border-radius: 5% 5% 0 0; // Corners fix
+
+      transition: $mainTransition;
+
+      will-change: transform, top;
+    }
+
+    &:after {
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    &:before {
+      right: 50%;
+      transform: translate(50%, -50%) rotate(45deg);
+    }
+
+    span {
+
+      &:after, &:before {
+        content: '';
+        width: $line;
+        height: 50%;
+        position: absolute;
+        top: 50%;
+
+        background: $nav-buttonColor;
+
+        transition: $mainTransition;
+
+        will-change: transform, border-radius, left, right;
+      }
+
+      &:after {
+        border-radius: 0 10% 0 0;
+        left: $buttonSize/5;
+        transform: translate(0, -50%) rotate(0deg);
+      }
+
+      &:before {
+        border-radius: 10% 0 0 0;
+        right: $buttonSize/5;
+        transform: translate(0, -50%) rotate(0deg);
+      }
+    }
+  }
+
+  &.menuButton-close {
+    .menuIcon {
+      &:after {
+        transform: translate(-50%, -44%) rotate(-45deg);
+      }
+
+      &:before {
+        transform: translate(50%, -44%) rotate(45deg);
+      }
+
+      span {
+
+        &:after{
+          border-radius: 0;
+          //left: 50%;
+          transform: translate(150%, -50%) rotate(-45deg);
+        }
+
+        &:before{
+          border-radius: 0;
+          //right: 50%;
+          transform: translate(-150%, -50%) rotate(45deg);
+        }
+      }
+    }
+  }
+}

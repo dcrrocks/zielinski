@@ -1,0 +1,64 @@
+$gap: 4em;
+
+.works {
+  //width: calc(100% - 7.5em);
+  width: 80vw;
+  height: auto;
+  position: relative;
+  //margin: 6em 6em 1.5em 1.5em;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-flow: row wrap;
+
+  &Cell {
+    width: 50%;
+    min-height: 1em;
+    //flex: 0 0 50%;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    padding: $gap/2;
+    box-sizing: border-box;
+
+    &:before {
+      content: '';
+      display: table;
+      padding-top: 100%;
+    }
+
+    &-tall {
+
+      &:before {
+        padding-top: calc(200% + #{$gap});
+      }
+    }
+
+    &-wide {
+      width: 100%;
+
+      &:before {
+        padding-top: calc(50% - #{$gap} / 2);
+      }
+    }
+
+    &-big {
+      width: 100%;
+    }
+  }
+
+  &Item {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 4em;
+    line-height: 1;
+    text-indent: 9999px;
+    //border: 1px solid black;
+
+    background: url(https://source.unsplash.com/random) center center;
+    background-size: cover;
+  }
+}

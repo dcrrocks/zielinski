@@ -1,0 +1,134 @@
+$gap: 4em;
+
+.works {
+  //width: calc(100% - 7.5em);
+  width: calc(100% + #{$gap});
+  height: auto;
+  position: relative;
+  //margin: 6em 6em 1.5em 1.5em;
+  margin: 0 calc(#{$gap} / 2 * -1) ;
+  padding: 0;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-flow: row wrap;
+
+  &Cell {
+    width: 33.3333333%;
+    min-height: 1em;
+    //flex: 0 0 50%;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    //padding: $gap/2;
+    box-sizing: border-box;
+
+    &:before {
+      content: '';
+      display: table;
+      padding-top: 100%;
+    }
+
+    &-1on2 {
+      width: 66.6666666%; //calc(66.6666666% - #{$gap} / 2);
+
+      &:before {
+        padding-top: 50%; //calc(50% + #{$gap} / 4);
+      }
+
+      .worksItem {
+
+        img {
+          width: auto;
+          height: 100%;
+
+        }
+      }
+    }
+
+    &-1on3 {
+      width: 100%;
+
+      &:before {
+        padding-top: 33.3333333%;
+      }
+
+      .worksItem {
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    &-2on1 {
+
+      &:before {
+        padding-top: 200%; //calc(200% + #{$gap});
+      }
+
+      .worksItem {
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    &-2on2 {
+      width: 66.6666666%; //calc(66.6666666% - #{$gap} / 2);
+
+      &:before {
+        padding-top: 100%;
+      }
+    }
+
+    &-2on3 {
+      width: 100%;
+
+      &:before {
+        padding-top: 66.6666666%; //calc(66.6666666% - #{$gap} / 3);
+      }
+
+      .worksItem {
+
+        img {
+          width: auto;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  &Item {
+    width: calc(100% - #{$gap});
+    height: auto;
+    text-align: center;
+    //font-size: 4em;
+    //line-height: 1;
+    text-indent: 9999px;
+    position: relative;
+    margin: 2em;
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+    //background: url(https://source.unsplash.com/random) center center;
+    //background-size: cover;
+
+    img {
+      width: 100%;
+      height: auto;
+
+      transform-style: preserve-3d;
+      transform: translate3d(-50%, -50%, 0);
+      //transform: translate(-50%, -50%);
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+  }
+}
